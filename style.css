@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(202, 125, 133);
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.color-tool-wrapper {
+    flex-direction: column;
+    height: 350px; /* remove fixed heights and width for responsiveness later */
+    width: 350px;
+    padding: 30px;
+    background-color: rgb(95, 95, 179);
+    border: 5px solid yellow;
+    gap: 5px; /* adds gap to all flex-child items within the parent with a display of flex - UPDATE LATER */
+}
+
+.color-box {
+    height: 50px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.input--color,
+.input--range-slider {
+    width: 40%;
+}
