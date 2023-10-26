@@ -31,7 +31,7 @@ body {
     border: 2px solid black;
 }
 
-.input--color,
-.input--range-slider {
+#input--color,
+#input--range-slider {
     width: 40%;
 }

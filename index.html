@@ -11,8 +11,8 @@
     <main>
         <div class="flex color-tool-wrapper">
             <h2>Lighten / Darken Color</h2>
-            <label for="input--color">Color (Hex)</label>
-            <input class="input--color" id="input--color" type="text" />
+            <label for="hex-input">Color (Hex)</label>
+            <input type="text" id="hex-input" name="hex-input" maxLength="7" placeholder="#000000" value='' />
 
             <div>
                 <label for="lighten-darken-toggle">Lighten</label>
@@ -21,13 +21,13 @@
             </div>
 
             <label for="input--range-slider">00%</label>
-            <input class="input--range-slider" id="input--range-slider" type="range" min="0" max="100" />
+            <input type="range" id="input--range-slider" name="input--range-slider" min="0" max="100" />
 
             <h3>Input Color</h3>
-            <div class="color-box color-box--input"></div>
+            <div class="color-box color-box--original" id="color-box--original"></div>
 
             <h3>Altered Color</h3>
-            <div class="color-box color-box--altered"></div>
+            <div class="color-box color-box--altered" id="color-box--altered"></div>
         </div>
     </main>
 
