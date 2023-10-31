@@ -27,6 +27,25 @@ const isValidHex = (hex) => {
 }
 
 const convertHexToRgb = (hex) => {
+  let strippedHex = hex.replace('#', '');
 
+  if(strippedHex.length === 3) {
+    strippedHex = strippedHex[0] + strippedHex[0] + strippedHex[1] + strippedHex[1] + strippedHex[2] + strippedHex[2];
+  }
+
+  const r = parseInt(strippedHex.substring(0,2), 16);
+  const g = parseInt(strippedHex.substring(2,4), 16);
+  const b = parseInt(strippedHex.substring(4,6), 16);
+
+  return {r,g,b}
 }
 
+
+const convertRgbToHex = (r, g, b) => {
+  const hex1 = r.toString(16);
+  const hex2 = g.toString(16);
+  const hex3 = b.toString(16);
+
+  console.log`${hex1}, ${hex2}, ${hex3}`;
+
+}
