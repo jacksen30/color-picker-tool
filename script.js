@@ -1,6 +1,8 @@
 const hexInput = document.getElementById('hex-input');
 const inputColorPreview = document.getElementById('color-box--original');
 const alteredColorPreview = document.getElementById('color-box--alterd');
+const sliderLabelText = document.getElementById('slider-label');
+const sliderInput = document.getElementById('input--range-slider');
 
 hexInput.addEventListener('keyup', () => {
   // Adds a 'keyup' event listner to hex-input field
@@ -59,3 +61,40 @@ const convertRgbToHex = (r, g, b) => {
   const hex = `#${hexPair1}${hexPair2}${hexPair3}`;
   return hex;
 }
+
+const convertWithinRgbRange = (hex, amount) => {
+  // Ensure when RGB value is updated by using percentage slider each value stays between 0 - 255
+  const newHex = hex + amount;
+  if (newHex > 255) {
+    return 255;
+  } else if (newHex < 0) {
+    return 0;
+  } else {
+    return newHex;
+  }
+}
+
+const alterColor = (hex, percentage) => {
+  // Alter RGB values by percentage selected on slider input
+  const {r, g, b} = convertHexToRgb(hex); //Object destructuring to grab values r , g and b
+
+  const amount = Math.floor((percentage/100) * 255);
+
+  const newR = convertWithinRgbRange(r, amount);
+  const newG = convertWithinRgbRange(g, amount);
+  const newB = convertWithinRgbRange(b, amount);
+  return convertRgbToHex(newR, newG, newB);
+}
+
+
+
+sliderInput.addEventListener('input', () => {
+  let sliderValue = sliderInput.value;
+  sliderLabelText.innerHTML = `${sliderValue} %`
+  console.log(sliderInput.value);
+
+  // alterColor(strippedHex)
+});
+
+
+
