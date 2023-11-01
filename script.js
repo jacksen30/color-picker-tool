@@ -1,8 +1,14 @@
 const hexInput = document.getElementById('hex-input');
 const inputColorPreview = document.getElementById('color-box--original');
-const alteredColorPreview = document.getElementById('color-box--alterd');
+const alteredColorTextLabel = document.getElementById('color-box--altered-label');
+const alteredColorPreview = document.getElementById('color-box--altered');
 const sliderLabelText = document.getElementById('slider-label');
 const sliderInput = document.getElementById('input--range-slider');
+
+// Sets the initial inputColorPreview & alteredColorPreview panels backgroundColor,
+// as what the HTML hexInput value attribute is set as.
+inputColorPreview.style.backgroundColor = hexInput.value;
+alteredColorPreview.style.backgroundColor = hexInput.value;
 
 hexInput.addEventListener('keyup', () => {
   // Adds a 'keyup' event listner to hex-input field
@@ -15,6 +21,7 @@ hexInput.addEventListener('keyup', () => {
   // Remove the leading '#' if it exists to normalize the input.
   const strippedHex = hex.replace('#', '');
   inputColorPreview.style.backgroundColor = `#${strippedHex}`;
+  alteredColorPreview.style.backgroundColor = `#${strippedHex}`;
 })
 
 const isValidHex = (hex) => {
@@ -89,11 +96,17 @@ const alterColor = (hex, percentage) => {
 
 
 sliderInput.addEventListener('input', () => {
-  let sliderValue = sliderInput.value;
-  sliderLabelText.innerHTML = `${sliderValue} %`
-  console.log(sliderInput.value);
+  if(!isValidHex(hexInput.value)) {
+    return
+  }
 
-  // alterColor(strippedHex)
+  sliderLabelText.textContent = `${sliderInput.value} %`
+  console.log(sliderInput.value); //comment out once finished
+
+  const alteredHex = alterColor(hexInput.value, sliderInput.value);
+  alteredColorTextLabel.textContent = `Altered Color ${alteredHex}`;
+  alteredColorPreview.style.backgroundColor = alteredHex;
+
 });
 
 
