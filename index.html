@@ -12,12 +12,15 @@
         <div class="flex color-tool-wrapper">
             <h2>Lighten / Darken Color</h2>
             <label for="hex-input">Color (Hex)</label>
-            <input type="text" id="hex-input" name="hex-input" maxLength="7" value='#041A09' />
+            <input type="text" id="hex-input" name="hex-input" maxLength="7" value='#2c6a75' />
 
-            <div>
-                <label for="lighten-darken-toggle">Lighten</label>
-                <input id="lighten-darken-toggle" />
-                <label for="lighten-darken-toggle">Darken</label>
+            <div class="toggle">
+                <p id="lightenText" class="toggle-text">Lighten</p>
+                <div id="toggleBtn" class="toggle-btn">
+                    <div class="inner-circle">
+                    </div>
+                </div>
+                <p id="darkenText" class="toggle-text unselected-toggle-text">Darken</p>
             </div>
 
             <label for="input--range-slider" id="slider-label">0 %</label>

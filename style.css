@@ -35,3 +35,41 @@ body {
 #input--range-slider {
     width: 40%;
 }
+
+.toggle {
+    display: flex;
+    align-items: center;
+    margin: 0.75rem 0;
+}
+
+.toggle-text {
+    font-size: 1.25rem;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 65px;
+    background-color: gray;
+    border-radius: 30px;
+    padding: 5px;
+    margin: 0 0.5rem;
+}
+
+.inner-circle {
+    width: 27px;
+    height: 27px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 250ms;
+}
+
+.toggle-btn.toggled > .inner-circle {
+    transform: translateX(29px);
+    background-color: #333;
+}
+
+.unselected-toggle-text {
+    opacity: 0.45;
+}
