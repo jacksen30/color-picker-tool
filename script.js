@@ -19,6 +19,7 @@ toggleBtn.addEventListener('click', () => {
     darkenText.classList.remove('unselected-toggle-text');
     lightenText.classList.add('unselected-toggle-text');
   }
+  reset();
 });
 
 // Sets the initial inputColorPreview & alteredColorPreview panels backgroundColor,
@@ -38,6 +39,7 @@ hexInput.addEventListener('keyup', () => {
   const strippedHex = hex.replace('#', '');
   inputColorPreview.style.backgroundColor = `#${strippedHex}`;
   alteredColorPreview.style.backgroundColor = `#${strippedHex}`;
+  reset();
 })
 
 const isValidHex = (hex) => {
@@ -110,20 +112,30 @@ const alterColor = (hex, percentage) => {
 }
 
 
-
 sliderInput.addEventListener('input', () => {
   if(!isValidHex(hexInput.value)) {
     return
   }
 
   sliderLabelText.textContent = `${sliderInput.value} %`
-  console.log(sliderInput.value); //comment out once finished
 
-  const alteredHex = alterColor(hexInput.value, sliderInput.value);
+  // valueAddition sets whether to use a positive or negative sliderInput.value,
+  // when used in calculating the alteredHex below
+  const valueAddition = toggleBtn.classList.contains('toggled') ? -sliderInput.value : sliderInput.value;
+
+  const alteredHex = alterColor(hexInput.value, valueAddition);
   alteredColorTextLabel.textContent = `Altered Color ${alteredHex}`;
   alteredColorPreview.style.backgroundColor = alteredHex;
-
 });
+
+// Resets sliderInput.value, slider.text, alteredColorTextLabel and alteredColorPreview backgroundColor
+// Currently calling the reset function via hexInput Event Listener & toggleBtn Event Listner
+const reset = () => {
+  sliderInput.value = 0;
+  sliderLabelText.textContent = `${sliderInput.value} %`;
+  alteredColorTextLabel.textContent = `Altered Color`;
+  alteredColorPreview.style.backgroundColor = hexInput.value;
+}
 
 
 
