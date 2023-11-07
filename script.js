@@ -5,6 +5,22 @@ const alteredColorPreview = document.getElementById('color-box--altered');
 const sliderLabelText = document.getElementById('slider-label');
 const sliderInput = document.getElementById('input--range-slider');
 
+const toggleBtn = document.getElementById('toggleBtn');
+const lightenText = document.getElementById('lightenText');
+const darkenText = document.getElementById('darkenText');
+
+toggleBtn.addEventListener('click', () => {
+  if (toggleBtn.classList.contains('toggled')) {
+    toggleBtn.classList.remove('toggled');
+    lightenText.classList.remove('unselected-toggle-text');
+    darkenText.classList.add('unselected-toggle-text');
+  } else {
+    toggleBtn.classList.add('toggled');
+    darkenText.classList.remove('unselected-toggle-text');
+    lightenText.classList.add('unselected-toggle-text');
+  }
+});
+
 // Sets the initial inputColorPreview & alteredColorPreview panels backgroundColor,
 // as what the HTML hexInput value attribute is set as.
 inputColorPreview.style.backgroundColor = hexInput.value;
