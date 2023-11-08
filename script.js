@@ -138,4 +138,40 @@ const reset = () => {
 }
 
 
+// Below code all relates to copying HEX code to clipboard and displaying notification
+
+const hexCopiedNotification = document.getElementById('hex-copied-notification');
+
+// Text passed will be copied to users clipboard
+const copyText = (text) => {
+  navigator.clipboard.writeText(text);
+}
+
+const hexToClipboard = () => {
+  // If alteredColorTextLabel.innerText has been updated copy new hex code to clipboard
+  // Else copy hexInput.value to clipboard
+  if (alteredColorTextLabel.innerText.length > 14) {
+    const currentAlteredHex = alteredColorTextLabel.innerText.slice(14)
+    copyText(currentAlteredHex);
+  } else {
+    copyText(hexInput.value);
+  }
+
+  // Add .show to hexCopiedNotification classList
+  // After 2.5 seconds remove .show from hexCopiedNotification classList
+  hexCopiedNotification.classList.add('show');
+
+  setTimeout(() => {
+    hexCopiedNotification.classList.remove('show');
+  }, 2500);
+}
+
+
+alteredColorTextLabel.addEventListener('click', () => {
+  hexToClipboard();
+});
+
+alteredColorPreview.addEventListener('click', () => {
+  hexToClipboard();
+});
 

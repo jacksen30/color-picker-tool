@@ -108,6 +108,27 @@ input[type="text"] {
     border: 2px solid black;
 }
 
+.color-box--altered {
+    display: flex;
+}
+
+.altered-color-label:hover,
+.color-box--altered:hover {
+    cursor: pointer;
+}
+
+.hex-copied-notification {
+    display: none;
+    padding: 4px;
+    margin: auto auto;
+    color: black;
+    background-color: #F6F1E9;
+}
+
+.hex-copied-notification.show {
+    display: inline-block;
+}
+
 footer {
     position: absolute;
     bottom: 0px;
@@ -118,7 +139,6 @@ footer {
 footer p {
     padding: 0.5rem 0;
 }
-
 
 
 @media screen and (min-width: 500px) {
