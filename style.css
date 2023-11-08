@@ -4,34 +4,55 @@
     padding: 0;
 }
 
-body {
-    min-height: 100vh;
-    background-color: rgb(202, 125, 133);
-    justify-content: center;
-    align-items: center;
-}
-
 .flex {
     display: flex;
+    flex-direction: column;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #F6F1E9;
+    color: #164B60;
+    justify-content: center;
+    align-content: center;
+    padding: 20px 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    flex-wrap: wrap;
+}
+
+.main {
+    width: 95%;
+}
+
+.main-heading {
+    font-weight: 800;
+    text-align: center;
+}
+
+.tool-description {
+    font-size: 14px;
 }
 
 .color-tool-wrapper {
     flex-direction: column;
-    height: 350px; /* remove fixed heights and width for responsiveness later */
-    width: 350px;
-    padding: 30px;
-    background-color: rgb(95, 95, 179);
-    border: 5px solid yellow;
-    gap: 5px; /* adds gap to all flex-child items within the parent with a display of flex - UPDATE LATER */
+    margin: 20px 0px;
+    gap: 5px; /* adds gap to all flex-child items within the parent */
 }
 
-.color-box {
-    height: 50px;
-    width: 100%;
-    border: 2px solid black;
+.label-hex-input {
+    margin-bottom: 0.25rem;
+    font-size: 1.125rem;
 }
 
-#input--color,
+input[type="text"] {
+    height: 40px;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 #input--range-slider {
     width: 40%;
 }
@@ -39,10 +60,11 @@ body {
 .toggle {
     display: flex;
     align-items: center;
-    margin: 0.75rem 0;
+    margin: 0.7rem 0;
 }
 
-.toggle-text {
+.toggle-text,
+#slider-label {
     font-size: 1.25rem;
 }
 
@@ -72,4 +94,26 @@ body {
 
 .unselected-toggle-text {
     opacity: 0.45;
+}
+
+.color-box-label {
+    margin-top: 0.75rem;
+}
+
+.color-box {
+    height: 65px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+
+@media screen and (min-width: 500px) {
+
+    .main {
+        max-width: 500px;
+    }
+
+    .color-box {
+        height: 85px;
+    }
 }

@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./style.css">
     <title>Color Picker App</title>
 </head>
 <body class="flex">
-    <main>
+    <main class="main flex">
+        <h1 class="main-heading">ShadeShift - Color Depth Adjuster</h1>
         <div class="flex color-tool-wrapper">
-            <h2>Lighten / Darken Color</h2>
-            <label for="hex-input">Color (Hex)</label>
+            <label for="hex-input" class="label-hex-input">Color (Hex)</label>
             <input type="text" id="hex-input" name="hex-input" maxLength="7" value='#ff01ff' />
 
             <div class="toggle">
@@ -26,12 +30,13 @@
             <label for="input--range-slider" id="slider-label">0 %</label>
             <input type="range" id="input--range-slider" class="input--range-slider" name="input--range-slider" min="0" max="100" value="0" />
 
-            <h3>Input Color</h3>
+            <h3 class="color-box-label">Input Color</h3>
             <div class="color-box color-box--original" id="color-box--original"></div>
 
-            <h3 id="color-box--altered-label">Altered Color</h3>
+            <h3 id="color-box--altered-label" class="color-box-label">Altered Color</h3>
             <div class="color-box color-box--altered" id="color-box--altered"></div>
         </div>
+        <h2 class="tool-description">Effortlessly adjust the brightness of any hue with ShadeShift. Just input your color's hex code, flip the toggle to lighten or darken, and slide to the precise percentage. Watch as your color transforms to the perfect shade.</h2>
     </main>
 
     <script src="./script.js"></script>
