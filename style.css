@@ -13,9 +13,9 @@ body {
     min-height: 100vh;
     background-color: #F6F1E9;
     color: #164B60;
-    justify-content: center;
+    /* justify-content: center; */
     align-content: center;
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     flex-wrap: wrap;
@@ -23,9 +23,11 @@ body {
 
 .main {
     width: 95%;
+    padding: 20px 30px;
 }
 
 .main-heading {
+    margin-bottom: 40px;
     font-weight: 800;
     text-align: center;
 }
@@ -101,19 +103,44 @@ input[type="text"] {
 }
 
 .color-box {
-    height: 65px;
+    height: 85px;
     width: 100%;
     border: 2px solid black;
 }
 
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    padding: 0.5rem 0;
+}
+
+
 
 @media screen and (min-width: 500px) {
+
+    body {
+        justify-content: center;
+    }
 
     .main {
         max-width: 500px;
     }
 
-    .color-box {
-        height: 85px;
+    .main-heading {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        text-align: right;
+        margin-right: 1rem;
+    }
+
+    footer p {
+        margin-right: 1rem;
     }
 }
