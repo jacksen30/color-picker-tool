@@ -13,9 +13,7 @@ body {
     min-height: 100vh;
     background-color: #F6F1E9;
     color: #164B60;
-    /* justify-content: center; */
     align-content: center;
-    /* padding: 20px 30px; */
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     flex-wrap: wrap;
@@ -23,11 +21,14 @@ body {
 
 .main {
     width: 95%;
-    padding: 20px 30px;
+    /* This margin-bottom & 0px padding on main should allow the footer to always be at bottom of the content on mobile 
+    and no overlap of main and footer elements */
+    padding: 8px 30px 0px 30px;
+    margin-bottom: 20px;
 }
 
 .main-heading {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     font-weight: 800;
     text-align: center;
 }
@@ -145,19 +146,20 @@ footer p {
 
     body {
         justify-content: center;
+        align-items: center;
     }
 
     .main {
         max-width: 500px;
+        margin-bottom: 0; /* Quick Fix to extra whitespace at the bottom on desktop - have a better look at this */
     }
 
     .main-heading {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 
     footer {
         text-align: right;
-        margin-right: 1rem;
     }
 
     footer p {
