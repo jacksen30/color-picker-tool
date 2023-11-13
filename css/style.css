@@ -108,8 +108,14 @@ input[type="text"] {
 }
 
 .altered-color-label:hover,
-.color-box--altered:hover {
-    cursor: pointer;
+.color-box--altered:hover,
+a:hover {
+    cursor: url(../assets/images/cursor-hand-drawn.svg), auto !important;
+}
+
+.altered-color-label:hover,
+.portfolio-link:hover {
+    color: rgb(30, 137, 9);
 }
 
 .hex-copied-notification {
@@ -133,7 +139,6 @@ footer {
 footer p {
     padding: 0.5rem 0;
 }
-
 
 @media screen and (min-width: 500px) {
 
