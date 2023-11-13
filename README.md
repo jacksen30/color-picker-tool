@@ -1,7 +1,7 @@
 # ShadeShift - Color Depth Adjuster
 
 
-![Screenshot of ShadeShifter on small laptop viewport](../color-tool/assets/images/ShadeShift.png)
+![Screenshot of ShadeShifter on small laptop viewport](./assets/images/ShadeShift.png)
 
 ## Introduction
 
@@ -9,14 +9,15 @@ Welcome to Shadeshifter, a handy web tool designed for developers, designers, an
 
 ## Motivation
 
-My motivation for creating Shadeshifter stems from a personal need for a tool that can quickly adjust color shades for web development projects. As a developer, I often find myself needing to tweak color hues, and Shadeshifter provides a perfect solution. Moreover, this project has been a valuable opportunity to hone my skills in HTML, CSS, and JavaScript.
+My motivation for creating ShadeShift stems from a personal need for a tool that can quickly adjust color shades for web development projects. As a developer, I often find myself needing to tweak color hues, and Shadeshifter provides a perfect solution. Moreover, this project has been a valuable opportunity to hone my skills in HTML, CSS, and JavaScript.
+
 ## Future Enhancements
 
-Looking ahead, I plan to expand Shadeshifter with more features and possibly integrate it into a larger suite of developer tools. Stay tuned for more updates and feel free to contribute your ideas and feedback!
+Looking ahead, I plan to expand ShadeShift with more features and possibly integrate it into a larger suite of developer tools. Stay tuned for more updates and feel free to contribute your ideas and feedback!
 
 ## Acknowledgements
 
-Shadeshifter was inspired by a tutorial on Scrimba, but it has grown with unique features and personal touches that make it more than just a tutorial project.
+ShadeShift was inspired by a tutorial on Scrimba, but it has grown with unique features and personal touches that make it more than just a tutorial project.
 A few of the improvements include:
 
 1. The addition of meta tags for seo puposes
@@ -24,5 +25,5 @@ A few of the improvements include:
 3. Improved layout and styling
 4. Additional functionality of allowing the altered hex code to be copied on a click or tap event
 5. Notification that appears for 2.5 seconds to alert user of a successful copy to clipboard event
-6. Custom cursor hover icon on desktop for hover of anchor tag / link to my personal portfolio website
+6. Custom cursor hover icon on desktop for hover of altered color preview & anchor tag / link to my personal portfolio website.
 
